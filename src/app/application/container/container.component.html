@@ -1,0 +1,53 @@
+<input type="text" [value]='title'>
+<label>{{title}}</label>
+<button class="btn btn-success" (click)="func()">appel</button>
+<hr>
+<button class="btn btn-success" (click)="increment()">+</button>
+{{count}}
+<button class="btn btn-danger" (click)="decrement()">-</button>
+
+<input [(ngModel)]="title">
+<button class="btn btn-info" (click)="func()"></button>
+<hr>
+
+<div class="form-group">
+<label>Nom</label>
+<input class="form-control" [(ngModel)]="nom"> 
+</div>
+
+<div class="form-group" *ngIf="test()">
+<label>email</label>
+<input class="form-control" [(ngModel)]="email"> 
+</div>
+
+<div class="form-group">
+<label>phone</label>
+<input class="form-control" [(ngModel)]="phone"> 
+</div>
+
+<div class="form-group">
+<label>About</label>
+<textarea class="form-control" [(ngModel)]="about"> </textarea>
+</div>
+<button class="btn btn-primary" (click)="save()" >Save</button>
+<hr>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>NAME</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let h of HEROES" [ngClass]="{red:h.name == 'Superman',black:h.name=='Batman',
+                                              yellow:h.name=='Flash'}">
+      <td>{{h.id}}</td>
+      <td>{{h.name}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="parent">
+  <app-fils [hereosf]="HEROES"></app-fils>
+</div>

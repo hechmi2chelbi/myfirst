@@ -1,0 +1,32 @@
+<h1>Product list</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <td><input [(ngModel)]="title" placeholder="search by title"></td>
+            <td><input  [(ngModel)]="title2"  placeholder="search by Type"></td>
+            <td><input  [(ngModel)]="title3"  placeholder="search by Price"></td>
+            <td><input  placeholder="search by Date"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>{{'Product.title'|translate}}</td>
+            <td>Type</td>
+            <td>{{'Product.price'|translate}}</td>
+            <td>{{'Product.date'|translate}}</td>
+            <td>Action</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let produit of reponseApi|search:title:title2:title3">
+            <td>{{produit.title}}</td>
+            <td>{{produit.product_type}}</td>
+            <td>{{produit.price}}</td>
+            <td>{{produit.entry_date}}</td>
+            <td>
+                <button class="btn btn-info" (click)="edit(produit)">Edit</button>
+                <button class="btn btn-danger" (click)='remove(produit)'>Remove</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

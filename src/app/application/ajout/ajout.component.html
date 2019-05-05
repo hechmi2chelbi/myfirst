@@ -1,0 +1,26 @@
+<h1>Ajouter un nouveau produit</h1>
+<div class="form-group">
+  <label>Produit:</label>
+  <input class="form-control" [(ngModel)]="title"> 
+  </div>
+  
+  <div class="form-group">
+  <label>Description</label>
+  <textarea class="form-control" [(ngModel)]="description"> </textarea>
+  </div>
+  
+  <div class="form-group">
+  <label>Type Produit:</label>
+    <select class="form-control" [(ngModel)]="product_type">
+      <option value="electronique">Electronique</option>
+      <option value="alimentaire">Alimentaire</option>
+      <option value="cosmotique">Cosmotique</option>
+    </select>
+  </div>
+  
+  <div class="form-group">
+  <label>Prix unitaire</label>
+  <input class="form-control" [(ngModel)]="price"> 
+  </div>
+  <button class="btn btn-primary" (click)="save()" >Save</button>
+  <hr>

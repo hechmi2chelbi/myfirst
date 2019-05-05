@@ -1,0 +1,27 @@
+
+<h1>Mettre à jour le produit : {{produit.title}}</h1>
+<div class="form-group">
+  <label>Produit:</label>
+  <input class="form-control" [(ngModel)]="produit.title"> 
+  </div>
+  
+  <div class="form-group">
+  <label>Description</label>
+  <textarea class="form-control" [(ngModel)]="produit.description"> </textarea>
+  </div>
+  
+  <div class="form-group">
+  <label>Type Produit:</label>
+    <select class="form-control" [(ngModel)]="produit.product_type">
+      <option value="electronique">Electronique</option>
+      <option value="alimentaire">Alimentaire</option>
+      <option value="cosmotique">Cosmotique</option>
+    </select>
+  </div>
+  
+  <div class="form-group">
+  <label>Prix unitaire</label>
+  <input class="form-control" [(ngModel)]="produit.price"> 
+  </div>
+  <button class="btn btn-primary" (click)="save()" >Update</button>
+  <hr>
